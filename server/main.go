@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"net"
 
 	"google.golang.org/grpc/reflection"
@@ -14,13 +15,14 @@ type server struct{}
 
 func main() {
 	// further used for grpcServer.Serve()
-	listener, err := net.Listen("tcp", ":8000")
+	listener, err := net.Listen("tcp", ":4040")
 	if err != nil {
 		panic(err)
 	}
 
 	// -------------------------TO BE USED FOR RegisterMicroserviceServer---------------
 	srv := grpc.NewServer()
+	fmt.Println("server started at port: 4040")
 
 	protos.RegisterAddMultiplyServiceServer(srv, &server{}) // registering our service on the server
 	reflection.Register(srv)                                // for serializing and de-serializing data

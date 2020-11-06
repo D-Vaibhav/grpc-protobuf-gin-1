@@ -1,4 +1,10 @@
 <!--
+
+        server:"localhost:4040"
+        client:"localhost:8080"
+        -----------------------------------------------------------------------------------
+
+
         --------------   .pb.go     -----------------------
 
         -> Request struct
@@ -40,4 +46,11 @@
             --- need grpcServer
             --- need server struct
 
+
+#4.
+    - inside client main.go
+
+    - connect to the server
+
+    - NewMicroserviceClient constructor
  -->
